@@ -1,0 +1,45 @@
+    /$$                                      /$$        /$$$$$$    /$$            /$$$$$$  /$$$$$$$  /$$$$$$
+  /$$$$$$                                   | $$       /$$$_  $$  | $$           /$$__  $$| $$__  $$|_  $$_/
+ /$$__  $$ /$$  /$$  /$$  /$$$$$$   /$$$$$$ | $$$$$$$ | $$$$\ $$ /$$$$$$        | $$  \ $$| $$  \ $$  | $$  
+| $$  \__/| $$ | $$ | $$ |____  $$ /$$__  $$| $$__  $$| $$ $$ $$|_  $$_/        | $$$$$$$$| $$$$$$$/  | $$  
+|  $$$$$$ | $$ | $$ | $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$\ $$$$  | $$          | $$__  $$| $$____/   | $$  
+ \____  $$| $$ | $$ | $$ /$$__  $$| $$  | $$| $$  | $$| $$ \ $$$  | $$ /$$      | $$  | $$| $$        | $$  
+ /$$  \ $$|  $$$$$/$$$$/|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$/  |  $$$$/      | $$  | $$| $$       /$$$$$$
+|  $$$$$$/ \_____/\___/  \_______/ \____  $$|_______/  \______/    \___/        |__/  |__/|__/      |______/
+ \_  $$_/                          /$$  \ $$                                                                
+   \__/                           |  $$$$$$/                                                                
+                                   \______/              
+*Note API command Parameters are Comma-Based 
+EX: 'send,23452356425,39369696,token420,hope you have a nice day'
+-- Don't Forget to filter out comma's( aka %2C ), there should never be a comma in any data
+=======================================================================================================================       
+receive, id64, itemID(aka: assetID), token, msg
+- Bot will say if the offer is sent or not, a Trade # will be sent if status = 'sent' (  if error, error is sent instead with Trade # )   
+- When the sent Offer's Status Changes, it will be sent to the server, along with the Trade # (  if error, error is sent instead with Trade # ) 
+- If the Trade is completed, the Trade # will be Sent with a new AssetID will be sent to ID the item in the future.
+======================================================================================================================= 
+receiveMulti, id64, token, msg, numOfItems, items.........
+- Bot will say if the offer is sent or not, a Trade # will be sent if status = 'sent' ( if error, error is sent instead with Trade # )   
+- When the sent Offer's Status Changes, it will be sent to the server, along with the Trade # (  if error, error is sent instead with Trade # ) 
+- If the Trade is completed, the Trade # will be Sent with with JSON-Data on the Newly received Items to ID the items in the future.
+=======================================================================================================================                    
+send, id64, itemID(aka: assetID), token, msg
+- Bot will say if the offer is sent or not, a Trade # will be sent if status = 'sent' ( if error, error is sent instead with Trade # )  
+- When the sent Offer's Status Changes, it will be sent to the server, along with the Trade # 
+- If the Trade is completed, the Trade # will be Sent.
+======================================================================================================================= 
+sendMulti, id64, token, msg, numOfItems, items.........
+- Bot will say if the offer is sent or not, a Trade # will be sent if status = 'sent' ( if error, error is sent instead with Trade # )
+- When the sent Offer's Status Changes, it will be sent to the server, along with the Trade # 
+- If the Trade is completed, the Trade # will be Sent.
+=======================================================================================================================  
+jsonInventoryDump
+- Bot will send it's entire CSGO inventory details in JSON format
+=======================================================================================================================  
+shutdown 
+- Bot will terminate
+======================================================================================================================= 
+lookup, trade#
+- Sends Back all the information available based on a Trade #
+======================================================================================================================= 
+
